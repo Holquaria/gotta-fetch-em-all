@@ -2,12 +2,11 @@ import Link from "next/link";
 import { capitaliseFirstLetter } from "@/utils/capitalise";
 
 const PokemonCard = ({ poke }) => {
+    console.log(poke)
   return (
     <div className="w-11/12 m-auto">
       <Link href={`/pokemon/${poke.id}`}>
-        <div className="w-full flex flex-row items-center justify-center hover:bg-red-400">
-          <p>{poke.id}</p>
-          <h3 className="text-3xl">{capitaliseFirstLetter(poke.name)}</h3>
+        <div className="w-full flex flex-row items-center justify-center">
           {poke.sprites.front_default ? (
             <img
               className=""
@@ -17,6 +16,16 @@ const PokemonCard = ({ poke }) => {
           ) : (
             <p>No image available</p>
           )}
+          <p className="self-center p-5">{poke.id}</p>
+          <h3 className="self-center text-3xl p-5">
+            {capitaliseFirstLetter(poke.name)}
+          </h3>
+          <ul className="self-center">
+          {poke.types.map((type) => {
+            const typeName = type.type.name
+            return <li key={type.type.name}>{capitaliseFirstLetter(typeName)}</li>
+          })}
+          </ul>
         </div>
       </Link>
     </div>

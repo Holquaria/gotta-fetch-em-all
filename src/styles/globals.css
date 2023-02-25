@@ -1,3 +1,95 @@
 @tailwind base;
-@tailwind componenets;
+@tailwind components;
 @tailwind utilities;
+
+#grass {
+  background-color: #429937;
+  border: 2px solid #275b20;
+}
+
+#poison {
+  background-color: #9454cb;
+  border: 2px solid #573278;
+}
+
+#psychic {
+  background-color: #e96a8d;
+  border: 2px solid #803b4f;
+}
+
+#steel {
+  background-color: #6caec9;
+  border: 2px solid #406777;
+}
+
+#rock {
+  background-color: #aba680;
+  border: 2px solid #66634d;
+}
+
+#normal {
+  background-color: #b8b6ba;
+  border: 2px solid #474748;
+}
+
+#fairy {
+  background-color: #e08dde;
+  border: 2px solid #855384;
+}
+
+#ice {
+  background-color: #47c9c9;
+  border: 2px solid #2b7878;
+}
+
+#dark {
+  color: white;
+  background-color: #4f4747;
+  border: 2px solid #272323;
+}
+
+#ground {
+  background-color: #b7844d;
+  border: 2px solid #644523;
+}
+
+#dragon {
+  background-color: #596fbf;
+  border: 2px solid #333f6d;
+}
+
+#water {
+  background-color: #2f9be2;
+  border: 2px solid #1f6696;
+}
+
+#ghost {
+  color: white;
+  background-color: #6f466f;
+  border: 2px solid #382338;
+}
+
+#electric {
+  background-color: #e2be27;
+  border: 2px solid #927a19;
+}
+
+#flying {
+  background-color: #87c0e8;
+  border: 2px solid #4d728b;
+}
+
+#bug {
+  background-color: #9e9f27;
+  border: 2px solid #646519;
+}
+
+#fighting {
+  background-color: #e59222;
+  border: 2px solid #a06518;
+}
+
+#fire {
+  background-color: #e6623f;
+  border: 2px solid #9c422a;
+}
