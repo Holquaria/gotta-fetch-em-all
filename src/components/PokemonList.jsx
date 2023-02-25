@@ -2,7 +2,7 @@ import PokemonCard from "./PokemonCard";
 
 const PokemonList = ({ pokemonArray }) => {
   return (
-    <ul>
+    <ul className="flex flex-col">
       {pokemonArray.map((poke) => (
           <PokemonCard key={poke.id} poke={poke} />
       ))}

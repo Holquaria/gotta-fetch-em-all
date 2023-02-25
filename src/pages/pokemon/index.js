@@ -4,8 +4,8 @@ import PokemonList from "@/components/PokemonList";
 export default function PokemonIndex({ pokemonArray }) {
   console.log(pokemonArray);
   return (
-    <div>
-    <h1 className="text-4xl">Pokemon List</h1>
+    <div className="bg-red-100">
+    <h1 className="text-4xl text-center">Pokemon List</h1>
     <PokemonList pokemonArray={pokemonArray} />
     </div>
   );
