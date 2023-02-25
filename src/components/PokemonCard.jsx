@@ -1,10 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 import { capitaliseFirstLetter } from "@/utils/capitalise";
 
 const PokemonCard = ({ poke }) => {
   console.log(poke);
   return (
-    <div className="w-11/12 m-auto my-1 border-4 border-red-900 hover:bg-white">
+    <div className="w-11/12 m-auto my-1 border rounded border-4 border-red-900 hover:bg-white hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1">
       <Link href={`/pokemon/${poke.id}`}>
         <div className="w-full grid grid-cols-3 items-center justify-between">
         <div className="flex">
