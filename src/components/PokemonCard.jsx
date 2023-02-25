@@ -4,28 +4,32 @@ import { capitaliseFirstLetter } from "@/utils/capitalise";
 const PokemonCard = ({ poke }) => {
   console.log(poke);
   return (
-    <div className="w-11/12 m-auto">
+    <div className="w-11/12 m-auto my-1 border-4 border-red-900 hover:bg-white">
       <Link href={`/pokemon/${poke.id}`}>
-        <div className="w-full flex flex-row items-center justify-between">
+        <div className="w-full grid grid-cols-3 items-center justify-between">
+        <div className="flex">
+            <p className="self-center pl-2">{poke.id}:</p>
+            <h3 className="self-center p-2">
+            {capitaliseFirstLetter(poke.name)}
+            </h3>
+        </div>
           {poke.sprites.front_default ? (
             <img
-              className=""
+              className="h-16"
               src={poke.sprites.front_default}
               alt={`image of ${poke.name}`}
             />
           ) : (
             <p>No image available</p>
           )}
-          <p className="self-center p-5">{poke.id}</p>
-          <h3 className="self-center text-3xl p-5">
-            {capitaliseFirstLetter(poke.name)}
-          </h3>
-          <ul className="self-center flex">
+
+
+          <ul className="self-center flex gap-1">
             {poke.types.map((type) => {
               const typeName = type.type.name;
               return (
-                <li className="px-5" id={type.type.name} key={type.type.name}>
-                  {capitaliseFirstLetter(typeName)}
+                <li className="px-1" id={type.type.name} key={type.type.name}>
+                  <p className="text-xs">{capitaliseFirstLetter(typeName)}</p>
                 </li>
               );
             })}
