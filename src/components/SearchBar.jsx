@@ -1,14 +1,9 @@
 import { useRouter } from "next/router"
-import { useState } from "react"
 
 
 
-const SearchBar = () => {
-    const [search, setSearch] = useState('')
+const SearchBar = ({search, setSearch}) => {
     const router = useRouter()
-
-    console.log(search)
-
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -16,13 +11,15 @@ const SearchBar = () => {
     }
 
     return (
-    <form onSubmit={(e) => handleSubmit(e)} className="flex m-auto justify-center">
-        <label>
-            Search Pokemon:
-            <input onChange={(e) => setSearch(e.target.value)} className="border border-black" type="text" id="search" name={search} value={search} />
-            <button>Go!</button>
-        </label>
-    </form>
+    <div>
+        <form onSubmit={(e) => handleSubmit(e)} className="flex flex-wrap m-auto justify-center">
+            <label className="flex">
+                <p className="mx-2">Search Pokemon:</p>
+                <input onChange={(e) => setSearch(e.target.value)} className="border border-black" type="text" id="search" name={search} value={search} />
+                <button className="mx-2 px-3 rounded-xl bg-red-500 text-white">Go!</button>
+            </label>
+        </form>
+    </div>
     )
 }
 

@@ -30,7 +30,7 @@ export default function SinglePokemon({ pokemon }) {
           {pokemon.types.map((type) => {
             const typeName = type.type.name;
             return (
-              <li className={"px-5 w-32"} id={type.type.name} key={type.type.name}>{capitaliseFirstLetter(typeName)}</li>
+              <li className={"px-5 w-32 text-center"} id={type.type.name} key={type.type.name}>{capitaliseFirstLetter(typeName)}</li>
             );
           })}
         </ul>
@@ -40,7 +40,7 @@ export default function SinglePokemon({ pokemon }) {
           {pokemon.stats.map((stat) => {
             return (
                 <li className="">
-                    <p>{stat.stat.name}: {stat.base_stat}</p>
+                    <p className="flex">{stat.stat.name === 'hp' ? <p>HP</p> : stat.stat.name === 'special-attack' ? <p>Special Attack</p> : stat.stat.name === 'special-defense' ? <p>Special Defense</p> : <p>{capitaliseFirstLetter(stat.stat.name)}</p>}: {stat.base_stat}</p>
                     <svg className="" height='20'>
                     <rect width={stat.base_stat} height="20" className='fill-green-700 hover:fill-green-900 stroke-green-900 stroke-2' />
                     </svg>

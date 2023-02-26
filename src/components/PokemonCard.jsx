@@ -3,7 +3,6 @@ import Image from "next/image";
 import { capitaliseFirstLetter } from "@/utils/capitalise";
 
 const PokemonCard = ({ poke }) => {
-  console.log(poke);
   return (
     <div className="w-11/12 m-auto my-1 border rounded border-4 border-red-900 hover:bg-white hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1">
       <Link href={`/pokemon/${poke.id}`}>
