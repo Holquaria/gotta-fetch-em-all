@@ -4,7 +4,6 @@ import Link from "next/link";
 import { moveNameFormatting } from "@/utils/moveNameFormatting";
 
 import Head from "next/head";
-import MoveCard from "@/components/MoveCard";
 import MoveList from "@/components/MoveList";
 import TypesCard from "@/components/TypesCard";
 import StatsCard from "@/components/StatsCard";
@@ -12,8 +11,6 @@ import StatsCard from "@/components/StatsCard";
 export default function SinglePokemon({ pokemon, moveArray }) {
   const router = useRouter();
   const { id } = router.query;
-  console.log(pokemon);
-  console.log(moveArray)
 
   const joinedMoveArray = moveArray.map((move) => {
     for (let i = 0; i < pokemon.moves.length; i++) {
@@ -25,15 +22,17 @@ export default function SinglePokemon({ pokemon, moveArray }) {
     }
   })
 
-
   return (
     <>
       <Head>
         <title>
-          {pokemon.name} {pokemon.id}
+        {pokemon.id}: {capitaliseFirstLetter(pokemon.name)} 
         </title>
       </Head>
       <div className="">
+        <div>
+        <Link href='/pokemon'><p className="text-center hover:cursor-pointer w-[175px] mt-4 m-auto bg-red-500 rounded-xl text-white">All Pokemon</p></Link>
+        </div>
       <div className="flex m-auto justify-center p-4">
           <Link href={`/pokemon/${parseInt(pokemon.id) - 1}`}>
             <p className="mx-2 px-3 rounded-xl bg-red-500 text-white px-4">
@@ -68,7 +67,7 @@ export default function SinglePokemon({ pokemon, moveArray }) {
   );
 }
 
-export async function getServerSideProps({ params }) {
+export async function getStaticProps({ params }) {
   const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${params.id}`);
   const data = await res.json();
 
@@ -82,4 +81,17 @@ export async function getServerSideProps({ params }) {
   return {
     props: { pokemon: data, moveArray },
   };
+}
+
+export async function getStaticPaths() {
+  const paths = []
+  for (let i = 0; i < 1009; i++) {
+    const path = { params: { id: i.toString() }}
+    paths.push(path)
+  }
+
+  return {
+    paths,
+    fallback: false
+  }
 }

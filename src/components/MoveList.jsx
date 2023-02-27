@@ -2,7 +2,7 @@ import MoveCard from "./MoveCard";
 import { moveNameFormatting } from "@/utils/moveNameFormatting";
 
 const MoveList = ({ moveArray, filter }) => {
-  console.log(moveArray);
+
   if (filter === "level-up") {
     moveArray.sort((p1, p2) =>
       p1.level_learned_at > p2.level_learned_at

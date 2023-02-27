@@ -58,7 +58,7 @@ export default function PokemonIndex({ pokemonArray }) {
 
 export async function getStaticProps() {
   const pokemonArray = [];
-  for (let i = 1; i < 100; i++) {
+  for (let i = 1; i < 1009; i++) {
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
     const data = await res.json();
     pokemonArray.push(data);
