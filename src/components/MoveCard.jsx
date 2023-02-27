@@ -6,7 +6,7 @@ const MoveCard = ({ move, moveNameFormatting }) => {
   };
 
   return (
-    <div className="grid grid-cols-6 grid-rows-2 divide-red-900 border-4 border-red-900 rounded-xl p-1">
+    <div className="grid grid-cols-7 grid-rows-2 divide-red-900 border-4 border-red-900 rounded-xl p-1">
       <div className="row-span-full border-r border-red-900">
         <p className="text-center text-sm break-words">{moveNameFormatting(move.name)}</p>
       </div>
@@ -37,10 +37,13 @@ const MoveCard = ({ move, moveNameFormatting }) => {
         </p>
       </div>
       <div>
-        <p className="text-center text-sm">PP</p>
-        <p className="text-center text-sm">{move.pp}</p>
+        <p className="text-center text-xs">PP</p>
+        <p className="text-center text-xs">{move.pp}</p>
       </div>
-      <div className="col-start-2 col-end-7 border-t">
+      <div>
+        <p className="text-center w-1/2 m-auto text-xs" id={move.type.name}>{capitaliseFirstLetter(move.type.name)}</p>
+      </div>
+      <div className="col-start-2 col-end-8 border-t">
         <p className="text-center text-xs">Effect</p>
         <p className="text-center text-xs">
           {move.effect_entries[0]?.short_effect.includes("$")

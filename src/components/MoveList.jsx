@@ -15,7 +15,6 @@ const MoveList = ({ moveArray, filter }) => {
 
   return (
     <div>
-        <h3 className="text-center text-2xl my-4">Moves Learned</h3>
       <ul className="">
         <p className="border-b border-red-900">{moveNameFormatting(filter)}</p>
         <div className="my-2">

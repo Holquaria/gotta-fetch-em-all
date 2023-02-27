@@ -56,6 +56,7 @@ export default function SinglePokemon({ pokemon, moveArray }) {
             alt={`image of ${pokemon.name}`}
           />
         <StatsCard stats={pokemon.stats} />
+        <h3 className="text-center text-2xl my-4">Moves Learned</h3>
         <div className="w-11/12 m-auto">
             <MoveList moveArray={moveArray} filter={'level-up'} />
             <MoveList moveArray={moveArray} filter={'machine'} />
