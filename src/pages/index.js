@@ -11,6 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ pokemonArray }) {
   const [search, setSearch] = useState("");
+  console.log(search)
 
   const filteredByName = () => {
     return pokemonArray.filter((poke) =>
@@ -29,7 +30,7 @@ export default function Home({ pokemonArray }) {
       <main className={styles.main}>
         <div className="flex flex-col gap-4 w-full">
           <h1 className="text-5xl text-center">Gotta Fetch 'Em All!</h1>
-          <Link href='/pokemon'><p className="text-center hover:cursor-pointer w-1/6 m-auto bg-red-500 rounded-xl text-white">All Pokemon</p></Link>
+          <Link href='/pokemon'><p className="text-center hover:cursor-pointer w-[200px] m-auto bg-red-500 rounded-xl text-white">All Pokemon</p></Link>
           <SearchBar search={search} setSearch={setSearch} />
           {search ? <PokemonList pokemonArray={filteredByName()} /> : null}
         </div>

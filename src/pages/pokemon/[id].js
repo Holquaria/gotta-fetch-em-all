@@ -84,7 +84,14 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const paths = []
+  
+  const res = await fetch(`https://pokeapi.co/api/v2/pokemon?offset-0&limit=1280`);
+  const data = await res.json()
+  
+  const paths = data.results.map((pokemon) => {
+    return { params: { id: pokemon.name }}
+  })
+
   for (let i = 1; i < 1009; i++) {
     const path = { params: { id: i.toString() }}
     paths.push(path)
