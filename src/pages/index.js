@@ -29,7 +29,7 @@ export default function Home({ pokemonArray }) {
       </Head>
       <main className={styles.main}>
         <div className="flex flex-col gap-4 w-full">
-          <h1 className="text-5xl text-center">Gotta Fetch 'Em All!</h1>
+          <h1 className="text-5xl mt-4 text-center">Gotta Fetch 'Em All!</h1>
           <Link href='/pokemon'><p className="text-center hover:cursor-pointer w-[200px] m-auto bg-red-500 rounded-xl text-white">All Pokemon</p></Link>
           <SearchBar search={search} setSearch={setSearch} />
           {search ? <PokemonList pokemonArray={filteredByName()} /> : null}
