@@ -38,7 +38,6 @@ export default function PokemonIndex({ pokemonArray }) {
         </div>
       {search ? 
         <div>
-            <p>Pokemon</p>
             <PokemonList pokemonArray={filteredByName()} />
         </div>
         : type ? 
