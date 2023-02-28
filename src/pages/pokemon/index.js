@@ -14,7 +14,10 @@ export default function PokemonIndex({ pokemonArray }) {
     ]
 
     const filteredByName = () => {
-        return pokemonArray.filter((poke) => poke.name.toLowerCase().includes(search));
+      const lowerCaseSearch = search.toLowerCase()
+      return pokemonArray.filter((poke) =>
+        poke.name.toLowerCase().includes(lowerCaseSearch)
+      );
     };
 
     const filterByType = (type) => {

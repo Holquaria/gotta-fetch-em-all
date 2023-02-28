@@ -11,11 +11,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ pokemonArray }) {
   const [search, setSearch] = useState("");
-  console.log(search)
 
   const filteredByName = () => {
+    const lowerCaseSearch = search.toLowerCase()
     return pokemonArray.filter((poke) =>
-      poke.name.toLowerCase().includes(search)
+      poke.name.toLowerCase().includes(lowerCaseSearch)
     );
   };
 
