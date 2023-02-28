@@ -85,7 +85,7 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const paths = []
-  for (let i = 0; i < 1009; i++) {
+  for (let i = 1; i < 1009; i++) {
     const path = { params: { id: i.toString() }}
     paths.push(path)
   }
